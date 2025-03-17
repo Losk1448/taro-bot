@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Политика конфиденциальности ТароГид</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Политика конфиденциальности Telegram-бота ТароГид. Узнайте, как мы собираем, используем и защищаем ваши данные.">
+    <meta name="keywords"
+        content="Политика конфиденциальности, ТароГид, Telegram-бот, защита данных, конфиденциальность">
+    <meta name="author" content="ТароГид">
+
+    <!-- Open Graph для социальных сетей -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/privacy-tarogid">
+    <meta property="og:title" content="Политика конфиденциальности ТароГид">
+    <meta property="og:description"
+        content="Узнайте, как мы собираем, используем и защищаем ваши данные при работе с Telegram-ботом ТароГид.">
+    <meta property="og:image" content="https://example.com/images/og-privacy.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://example.com/privacy-tarogid">
+    <meta name="twitter:title" content="Политика конфиденциальности ТароГид">
+    <meta name="twitter:description"
+        content="Узнайте, как мы собираем, используем и защищаем ваши данные при работе с Telegram-ботом ТароГид.">
+    <meta name="twitter:image" content="https://example.com/images/og-privacy.jpg">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        /* Подключение шрифта */
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* CSS-переменные для тем */
+        :root {
+            --bg-color-light: #f8f9fa;
+            --text-color-light: #212529;
+            --bg-color-dark: #121212;
+            --text-color-dark: #e0e0e0;
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --accent-color: #495057;
+        }
+
+        /* Светлая тема */
+        body.light-theme {
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+
+        /* Тёмная тема */
+        body.dark-theme {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        /* Общие стили для тем */
+        .light-theme .navbar,
+        .light-theme footer {
+            background-color: #ffffff;
+        }
+
+        .dark-theme .navbar,
+        .dark-theme footer {
+            background-color: var(--accent-color) !important;
+        }
+
+        .accordion-button {
+            background-color: transparent;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-theme .accordion-button {
+            color: var(--text-color-light);
+        }
+
+        .accordion-button::after {
+            filter: invert(1);
+        }
+
+        .accordion-item {
+            border: none;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .accordion-body {
+            background-color: transparent;
+        }
+
+        /* Заголовки секций */
+        .section-title {
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+
+        .section-title.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Table of Contents (TOC) */
+        .toc {
+            position: sticky;
+            top: 80px;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .dark-theme .toc {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .toc a {
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 1rem;
+            color: inherit;
+            border-left: 4px solid transparent;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .toc a:hover,
+        .toc a:focus {
+            background-color: rgba(13, 110, 253, 0.1);
+            border-left-color: var(--primary-color);
+            outline: none;
+        }
+
+        .toc a.active {
+            font-weight: 600;
+            border-left-color: var(--primary-color);
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        /* Кнопка "Наверх" */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            display: none;
+            font-size: 1.5rem;
+            border: none;
+            outline: none;
+            background-color: var(--accent-color);
+            color: white;
+            cursor: pointer;
+            padding: 0.75rem;
+            border-radius: 50%;
+            transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+        }
+
+        #scrollTopBtn:hover,
+        #scrollTopBtn:focus {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+            outline: none;
+        }
+
+        /* Подвал */
+        footer {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Карточки */
+        .card {
+            border: none;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .light-theme .card {
+            background-color: #ffffff;
+            color: var(--text-color-light);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-theme .card {
+            background-color: #1e1e1e;
+            color: var(--text-color-dark);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Адаптивные улучшения */
+        @media (max-width: 767.98px) {
+            .toc {
+                position: static;
+                margin-bottom: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Печать */
+        @media print {
+            .accordion-collapse {
+                display: block !important;
+                height: auto !important;
+                visibility: visible !important;
+            }
+
+            .accordion-button::after {
+                content: "";
+            }
+
+            .navbar,
+            footer,
+            #scrollTopBtn,
+            .toc,
+            .theme-toggle,
+            .print-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="light-theme">
+
+    <!-- Шапка/Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top" aria-label="Основная навигация">
+        <div class="container">
+            <!-- Лого или название -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-shield-lock-fill me-2" aria-hidden="true"></i>
+                <span class="fw-bold">ТароГид</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <!-- Кнопки-ссылки в правой части шапки -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+                    <!-- Кнопка переключения темы -->
+                    <li class="nav-item me-lg-2 mb-1 mb-lg-0">
+                        <button id="themeToggleBtn" class="btn btn-sm btn-outline-secondary d-flex align-items-center"
+                            type="button" aria-label="Переключить тему" aria-pressed="false">
+                            <i class="bi bi-moon-fill me-1" aria-hidden="true"></i>
+                            <span class="d-none d-sm-inline">Тёмная тема</span>
+                        </button>
+                    </li>
+                    <!-- Кнопка печати -->
+                    <li class="nav-item">
+                        <button id="printBtn" class="btn btn-sm btn-outline-secondary d-flex align-items-center"
+                            type="button" aria-label="Печать страницы">
+                            <i class="bi bi-printer-fill me-1" aria-hidden="true"></i>
+                            <span class="d-none d-sm-inline">Печать</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="container my-5">
+        <div class="row">
+            <!-- Боковая панель (Table of Contents) -->
+            <aside class="col-lg-3 d-none d-lg-block">
+                <nav class="toc" aria-label="Содержание страницы">
+                    <h2 class="h5 fw-bold mb-3">Содержание</h2>
+                    <a href="#data-collection" data-bs-target="#collapseOne"
+                        aria-label="Перейти к разделу 1. Сбор данных">1. Сбор данных</a>
+                    <a href="#data-usage" data-bs-target="#collapseTwo"
+                        aria-label="Перейти к разделу 2. Использование данных">2. Использование данных</a>
+                    <a href="#data-storage" data-bs-target="#collapseThree"
+                        aria-label="Перейти к разделу 3. Хранение данных">3. Хранение данных</a>
+                    <a href="#rights" data-bs-target="#collapseFour" aria-label="Перейти к разделу 4. Ваши права">4.
+                        Ваши права</a>
+                    <a href="#data-security" data-bs-target="#collapseFive"
+                        aria-label="Перейти к разделу 5. Безопасность данных">5. Безопасность данных</a>
+                    <a href="#third-party-disclosure" data-bs-target="#collapseSix"
+                        aria-label="Перейти к разделу 6. Передача данных">6. Передача данных</a>
+                    <a href="#policy-changes" data-bs-target="#collapseSeven"
+                        aria-label="Перейти к разделу 7. Изменения политики">7. Изменения политики</a>
+                    <a href="#contacts" data-bs-target="#collapseEight" aria-label="Перейти к разделу 8. Контакты">8.
+                        Контакты</a>
+                    <a href="#disclaimer" data-bs-target="#collapseNine" aria-label="Перейти к разделу 9. Дисклеймер">9.
+                        Дисклеймер</a>
+                </nav>
+            </aside>
+
+            <!-- Основная колонка с текстом -->
+            <div class="col-lg-9">
+                <!-- Заголовок и дата вступления -->
+                <header class="text-center mb-5">
+                    <h1 class="section-title" tabindex="-1">
+                        Политика конфиденциальности ТароГид
+                    </h1>
+                    <p class="text-muted">
+                        <strong>Дата вступления в силу:</strong>
+                        <em>27 января 2025 года</em>
+                    </p>
+                </header>
+
+                <!-- Карточка вступления -->
+                <section class="card shadow-sm mb-4" id="intro">
+                    <div class="card-body">
+                        <p>
+                            Мы уважаем вашу конфиденциальность и защищаем все предоставленные вами данные.
+                            Настоящая Политика конфиденциальности объясняет, как мы собираем,
+                            используем и обрабатываем ваши данные при использовании Telegram-бота
+                            <strong>ТароГид</strong>.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Аккордеон с разделами политики -->
+                <section class="accordion" id="policyAccordion">
+
+                    <!-- 1. Сбор данных -->
+                    <div class="accordion-item" id="data-collection">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                1. Сбор данных
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>При использовании ТароГид мы можем собирать следующие данные:</p>
+                                <ul>
+                                    <li>Ваше имя пользователя (username) в Telegram.
+                                        <small class="text-muted">
+                                            (В некоторых юрисдикциях может считаться персональными данными.)
+                                        </small>
+                                    </li>
+                                    <li>Ваш уникальный идентификатор пользователя (Telegram ID).</li>
+                                    <li>Текстовые сообщения, которые вы отправляете боту, включая вопросы и команды.
+                                    </li>
+                                    <li>Данные о подписке (статус, дата окончания подписки) и взаимодействиях с ботом
+                                        (например, дата последнего получения «карты дня»).</li>
+                                </ul>
+                                <p><strong>Мы не собираем:</strong></p>
+                                <ul>
+                                    <li>Ваш номер телефона или адрес электронной почты (кроме случаев, когда вы сами
+                                        добровольно их передадите).</li>
+                                    <li>Чувствительные данные (например, банковские карты, медицинская информация и
+                                        т.д.).
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Использование данных -->
+                    <div class="accordion-item" id="data-usage">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                2. Использование данных
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>
+                                    Собранные данные используются исключительно для предоставления функционала ТароГид:
+                                </p>
+                                <ul>
+                                    <li>Генерация «карты дня» и её описания.</li>
+                                    <li>Ответы на ваши вопросы с помощью алгоритмов/сервисов ИИ (ChatGPT и т.п.).</li>
+                                    <li>Управление подписками и доступом к функциям.</li>
+                                    <li>Улучшение работы бота на основе статистики использования (например, выявление
+                                        наиболее популярных запросов).</li>
+                                </ul>
+                                <p>
+                                    В случае использования внешних сервисов искусственного интеллекта (например, OpenAI
+                                    API),
+                                    часть ваших сообщений может передаваться этим сервисам. При этом мы стараемся не
+                                    передавать
+                                    и не хранить в тексте разговоров какие-либо дополнительные персональные данные,
+                                    кроме
+                                    самого текста вопроса, необходимого для ответа ИИ.
+                                </p>
+                                <p>
+                                    Мы <strong>не передаем</strong> ваши данные третьим лицам без вашего согласия,
+                                    за исключением случаев, предусмотренных законодательством.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Хранение данных -->
+                    <div class="accordion-item" id="data-storage">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                3. Хранение данных
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>
+                                    Мы храним данные на защищённых серверах, соответствующих современным стандартам
+                                    безопасности. Все данные шифруются и используются только для предоставления
+                                    функционала бота.
+                                </p>
+                                <p><strong>Срок хранения данных:</strong></p>
+                                <ul>
+                                    <li>Информация о вашем ID и статусе подписки хранится, пока вы пользуетесь ботом
+                                        (и может быть удалена по вашему запросу).</li>
+                                    <li>Сообщения, отправленные боту, временно хранятся (не более 7 дней) для обработки
+                                        и улучшения функционала.</li>
+                                </ul>
+                                <p>
+                                    Вы можете запросить удаление всех данных, связанных с вами, отправив запрос
+                                    администратору бота (контакты см. ниже).
+                                </p>
+                                <p>
+                                    <em>Дополнительно:</em> Любые серверные логи (IP-адрес, временные метки и т.п.),
+                                    если ведутся,
+                                    хранятся строго в целях безопасности и диагностики, и не содержат персональных
+                                    данных
+                                    сверх необходимых для технического функционирования.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Ваши права -->
+                    <div class="accordion-item" id="rights">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                4. Ваши права
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>
+                                    Вы имеете право:
+                                </p>
+                                <ul>
+                                    <li>Получить доступ к данным, которые бот хранит о вас.</li>
+                                    <li>Запросить изменение или удаление данных.</li>
+                                    <li>Отказаться от использования бота в любое время, что приведет к прекращению
+                                        обработки ваших данных.</li>
+                                </ul>
+                                <p>
+                                    Для реализации этих прав свяжитесь с администратором бота (контакты указаны в
+                                    разделе
+                                    «Контакты»). В некоторых случаях (например, требование закона о хранении данных)
+                                    удаление может быть частично ограничено.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Безопасность данных -->
+                    <div class="accordion-item" id="data-security">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                5. Безопасность данных
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>
+                                    Мы принимаем меры для защиты ваших данных от несанкционированного доступа, изменения
+                                    или удаления. Однако передача данных через интернет может быть связана с рисками,
+                                    и мы не можем гарантировать абсолютную безопасность.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Передача данных третьим лицам -->
+                    <div class="accordion-item" id="third-party-disclosure">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                6. Передача данных
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>
+                                    Мы не передаем ваши данные третьим лицам за исключением случаев:
+                                </p>
+                                <ul>
+                                    <li>Требований законодательства.</li>
+                                    <li>Технической необходимости, связанной с предоставлением функционала
+                                        (например, использование Telegram API и сервисов ИИ для обработки ваших
+                                        вопросов).</li>
+                                </ul>
+                                <p>
+                                    В таких ситуациях мы стараемся минимизировать объём передаваемой информации.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Изменения политики -->
+                    <div class="accordion-item" id="policy-changes">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                7. Изменения политики
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>
+                                    Мы можем обновлять Политику конфиденциальности по мере необходимости.
+                                    Все изменения будут опубликованы в этом разделе, а пользователи будут уведомлены
+                                    через бота о значительных изменениях.
+                                </p>
+                                <p>
+                                    Актуальная версия Политики конфиденциальности всегда доступна по ссылке (или в
+                                    разделе информации бота), и дата последнего обновления указывается выше.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Контакты -->
+                    <div class="accordion-item" id="contacts">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                8. Контакты
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>
+                                    Если у вас есть вопросы или запросы, связанные с обработкой ваших данных,
+                                    свяжитесь с администратором бота:
+                                </p>
+                                <ul>
+                                    <li><strong>Email:</strong>
+                                        <a href="mailto:serofim2606@gmail.com">serofim2606@gmail.com</a>
+                                    </li>
+                                    <li><strong>Telegram:</strong>
+                                        <a href="https://t.me/ILITA_VJUH" target="_blank"
+                                            rel="noopener noreferrer">@ILITA_VJUH</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Дисклеймер -->
+                    <div class="accordion-item" id="disclaimer">
+                        <h2 class="accordion-header" id="headingNine">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                9. Дисклеймер
+                            </button>
+                        </h2>
+                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                            data-bs-parent="#policyAccordion">
+                            <div class="accordion-body">
+                                <p>
+                                    Сервис <strong>ТароГид</strong> не является медицинским или
+                                    психотерапевтическим сервисом. Все рекомендации, советы, «карты дня»,
+                                    психологические интерпретации и ответы бота предназначены исключительно
+                                    для личного самопознания и развлечения, и не могут рассматриваться как
+                                    полноценная профессиональная помощь. Если у вас есть серьёзные
+                                    психологические или медицинские проблемы, мы настоятельно рекомендуем
+                                    обратиться к квалифицированному психологу или врачу.
+                                </p>
+                                <p>
+                                    Используя данный бот, вы соглашаетесь, что все представленные материалы
+                                    носят лишь информационно-развлекательный характер, и
+                                    <strong>ТароГид</strong> не несёт ответственности за принимаемые вами решения
+                                    и их последствия.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Итоговый блок -->
+                <section class="card shadow-sm mt-5">
+                    <div class="card-body">
+                        <p>
+                            Эта Политика конфиденциальности является частью наших обязательств по защите ваших данных.
+                            Используя ТароГид, вы соглашаетесь с настоящей Политикой и с тем, что сервис не заменяет
+                            консультации медицинских или психологических специалистов. Если вы не согласны с какими-либо
+                            положениями, пожалуйста, прекратите использование бота.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer bg-light text-dark py-3 shadow-sm">
+        <div class="container text-center">
+            <p class="mb-0" style="font-size: 0.9rem;">
+                &copy; 2025 ТароГид. Все права защищены.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollTopBtn" title="Вернуться наверх" aria-label="Вернуться наверх">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+    <!-- Скрипты Bootstrap и необходимые библиотеки -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Основной скрипт -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            /****************************************************
+             * 1. Анимация появления заголовка при прокрутке
+             ****************************************************/
+            const titles = document.querySelectorAll('.section-title');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            titles.forEach(title => observer.observe(title));
+
+            /****************************************************
+             * 2. Кнопка «Наверх»
+             ****************************************************/
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', () => {
+                if (document.documentElement.scrollTop > 200) {
+                    scrollTopBtn.style.display = 'block';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            });
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Фокус на главный заголовок
+                const mainTitle = document.querySelector('.section-title');
+                if (mainTitle) {
+                    mainTitle.focus();
+                }
+            });
+
+            /****************************************************
+             * 3. Подсветка активного пункта TOC при скролле
+             ****************************************************/
+            const tocLinks = document.querySelectorAll('.toc a');
+            const sections = Array.from(tocLinks).map(link => {
+                const id = link.getAttribute('href'); // "#data-collection" и т.п.
+                return document.querySelector(id);
+            });
+
+            function onScrollHighlight() {
+                let scrollPosition = document.documentElement.scrollTop + 120;
+                sections.forEach((section, index) => {
+                    if (
+                        section.offsetTop <= scrollPosition &&
+                        (section.offsetTop + section.offsetHeight) > scrollPosition
+                    ) {
+                        tocLinks.forEach(link => link.classList.remove('active'));
+                        tocLinks[index].classList.add('active');
+                    }
+                });
+            }
+            document.addEventListener('scroll', onScrollHighlight);
+
+            // Клик по ссылке в TOC: раскрываем аккордеон и скроллимся
+            tocLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const anchorId = link.getAttribute('href');         // "#data-collection"
+                    const collapseId = link.dataset.bsTarget;           // "#collapseOne"
+                    const targetSection = document.querySelector(anchorId);
+                    const collapseElem = document.querySelector(collapseId);
+
+                    if (collapseElem) {
+                        const isShown = collapseElem.classList.contains('show');
+                        if (!isShown) {
+                            const bsCollapse = new bootstrap.Collapse(collapseElem, { toggle: false });
+                            bsCollapse.show();
+                            collapseElem.addEventListener('shown.bs.collapse', function handler() {
+                                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                targetSection.setAttribute('tabindex', '-1');
+                                targetSection.focus();
+                                collapseElem.removeEventListener('shown.bs.collapse', handler);
+                            });
+                        } else {
+                            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            targetSection.setAttribute('tabindex', '-1');
+                            targetSection.focus();
+                        }
+                    } else {
+                        // Если не найден аккордеон (не должно случаться), просто скроллимся
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        targetSection.setAttribute('tabindex', '-1');
+                        targetSection.focus();
+                    }
+                });
+            });
+
+            /****************************************************
+             * 4. Переключение темы (dark/light)
+             ****************************************************/
+            const body = document.body;
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    body.classList.remove('light-theme');
+                    body.classList.add('dark-theme');
+                    themeToggleBtn.innerHTML = '<i class="bi bi-brightness-high-fill me-1"></i><span class="d-none d-sm-inline">Светлая тема</span>';
+                    themeToggleBtn.setAttribute('aria-pressed', 'true');
+                } else {
+                    body.classList.remove('dark-theme');
+                    body.classList.add('light-theme');
+                    themeToggleBtn.innerHTML = '<i class="bi bi-moon-fill me-1"></i><span class="d-none d-sm-inline">Тёмная тема</span>';
+                    themeToggleBtn.setAttribute('aria-pressed', 'false');
+                }
+            }
+
+            // Проверка пользовательских настроек и системных предпочтений
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else if (prefersDarkScheme.matches) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                if (body.classList.contains('light-theme')) {
+                    setTheme('dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    setTheme('light');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            /****************************************************
+             * 5. Кнопка «Печать»
+             ****************************************************/
+            const printBtn = document.getElementById('printBtn');
+            printBtn.addEventListener('click', () => {
+                // Прокрутка вверх
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                // Раскрываем все аккордеоны
+                const allCollapses = document.querySelectorAll('.accordion-collapse');
+                const collapseInstances = [];
+                let openCount = 0;
+
+                allCollapses.forEach(collapseEl => {
+                    if (!collapseEl.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: false });
+                        bsCollapse.show();
+                        collapseInstances.push(bsCollapse);
+                    }
+                });
+
+                if (collapseInstances.length === 0) {
+                    // Если все уже раскрыты
+                    window.print();
+                } else {
+                    allCollapses.forEach(collapseEl => {
+                        collapseEl.addEventListener('shown.bs.collapse', function handler() {
+                            openCount++;
+                            if (openCount === collapseInstances.length) {
+                                window.print();
+                                allCollapses.forEach(el => {
+                                    el.removeEventListener('shown.bs.collapse', handler);
+                                });
+                            }
+                        });
+                    });
+                    // Подстраховка на случай сбоя
+                    setTimeout(() => { window.print(); }, 1500);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
